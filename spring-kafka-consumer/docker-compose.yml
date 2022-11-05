@@ -7,13 +7,15 @@ networks:
 
 services:
   zookeeper:
-    image: zookeeper:latest
+    image: bitnami/zookeeper:3.8.0
     container_name: zookeeper
     restart: always
     networks:
       - kafka-net
     ports:
       - "2181:2181"
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: yes
 
   kafka:
     image: bitnami/kafka:3.3.1
