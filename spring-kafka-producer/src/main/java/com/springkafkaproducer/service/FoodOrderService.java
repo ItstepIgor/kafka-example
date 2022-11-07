@@ -20,4 +20,11 @@ public class FoodOrderService {
     public String createFoodOrder(FoodOrder foodOrder) throws JsonProcessingException {
         return producer.sendMessage(foodOrder);
     }
+
+//    Cсконфигурить подключение кафки через апликатиоон ямл
+//    Сделать билдить образ через докер коппоуз сервисов
+//    Добавить а аплие ямдл  возможность кофигурации через  переменную окрожение адрес кафки
+//    Настроить проброс адреса подключеня кафки в докер крмпоуз
+
+
 }

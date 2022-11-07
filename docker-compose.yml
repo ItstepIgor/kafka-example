@@ -49,3 +49,29 @@ services:
       KAFKA_BROKERCONNECT: "kafka:29092"
     depends_on:
       - "kafka"
+  spring-kafka-consumer:
+    build:
+      context: ./spring-kafka-consumer
+      dockerfile: Dockerfile
+    image: kafka-consumer:latest
+    container_name: consumer-app
+    ports:
+      - "8081:8081"
+    environment:
+      KAFKA_URL: "kafka:29092"
+    restart: always
+    networks:
+      - kafka-net
+  spring-kafka-producer:
+    build:
+      context: ./spring-kafka-producer
+      dockerfile: Dockerfile
+    image: kafka-producer:latest
+    container_name: producer-app
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_URL: "kafka:29092"
+    restart: always
+    networks:
+      - kafka-net

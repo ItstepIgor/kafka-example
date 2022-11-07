@@ -3,3 +3,7 @@ server:
 
 topic:
   name: t.food.order
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_URL:localhost:9092}

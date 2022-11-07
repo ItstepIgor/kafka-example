@@ -3,9 +3,10 @@ server:
 
 spring:
   kafka:
+    bootstrap-servers: ${KAFKA_URL:localhost:9092}
     consumer:
+      auto-offset-reset: earliest
       group-id: "default"
-
   h2:
     console:
       enabled: true
@@ -14,6 +15,5 @@ spring:
     url: jdbc:h2:mem:testdb
     username: sa
     password: password
-
 topic:
   name: t.food.order

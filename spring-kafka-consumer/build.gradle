@@ -13,6 +13,10 @@ configurations {
     }
 }
 
+bootJar {
+    archiveFileName = 'spring-kafka-consumer.jar'
+}
+
 repositories {
     mavenCentral()
 }
