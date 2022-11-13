@@ -13,7 +13,7 @@ public class Scheduler {
     private KafkaTemplate<String, String> kafkaTemplate;
     private Integer count = 0;
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 1000)
     public void sendMessage() {
         count++;
         kafkaTemplate.send("t.scheduled", "message " + count);
